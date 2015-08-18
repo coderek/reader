@@ -5,7 +5,7 @@ browserSync = require('browser-sync').create()
 
 gulp.task 'coffee', ->
   gulp.src './src/*.coffee'
-    .pipe coffee(care: true)
+    .pipe coffee(bare: true)
     .on 'error', gutil.log
     .pipe gulp.dest('./public/')
   
