@@ -8,11 +8,14 @@ gulp.task 'coffee', ->
     .pipe coffee(bare: true)
     .on 'error', gutil.log
     .pipe gulp.dest('./public/')
-  
-gulp.task 'serve', ['coffee'], ->
-  browserSync.init server: '.'
-  gulp.watch './src/*.coffee', ['coffee']
-  gulp.watch(['./*.html', './src/*.coffee']).on 'change', browserSync.reload
+
+gulp.task 'copy_assets', ->
+  gulp.src 'src/*.html'
+    .pipe gulp.dest './public/'
+
+gulp.task 'build', ['coffee', 'copy_assets']
+
+gulp.task 'serve', ['build'], ->
+  gulp.watch ['./src/*.html', './src/*.coffee'], ['build']
 
 gulp.task 'default', ['serve']
-  

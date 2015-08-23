@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+        <link rel="import" href="./elements.html">
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/lodash/lodash.js"></script>
+        <script src="./app.js"></script>
+        <style is="custom-style" >
+            :root {
+                --paper-toolbar-background: #123;
+                --paper-toolbar-color: #29ee10;
+            }
+
+            #drawer {
+                background: #eee;
+            }
+
+        </style>
+    </head>
+    <body>
+        <template id="Reader" is="dom-bind">
+        <paper-drawer-panel>
+            <paper-header-panel id="drawer" drawer>
+                <paper-toolbar>
+                    <paper-icon-button icon="menu" on-tap="menuAction">
+                    </paper-icon-button>
+
+                    <div class="title">Geek Reader</div>
+                </paper-toolbar>
+                <div> Drawer content... </div>
+            </paper-header-panel>
+            <paper-header-panel main>
+                <paper-toolbar>
+                    <paper-menu-button horizontal-align="right" vertical-align="top">
+                        <paper-icon-button icon="more-vert" class="dropdown-trigger"></paper-icon-button>
+
+                        <paper-menu class="dropdown-content">
+                            <template is="dom-repeat" id="menu" items="{{submenu_items}}"></template>
+                        </paper-menu>
+                    </paper-menu-button>
+                </paper-toolbar>
+            </paper-header-panel>
+        </paper-drawer-panel>
+        </template>
+    </body>
+</html>

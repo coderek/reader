@@ -1,4 +1,12 @@
 $ -> 
-  Demo.menuAction = -> console.log 'menu action'
-  Demo.moreAction = -> console.log 'more action'
+  Reader.submenu_items = [
+      'alpha',
+      'beta',
+      'gamma',
+      'delta',
+      'epsilon'
+  ]
+
+  Reader.menuAction = -> console.log 'menu action'
+  Reader.moreAction = -> console.log 'more action'
 
