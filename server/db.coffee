@@ -15,7 +15,7 @@ getCollection = (client, done, table, foreignKey)->
       else 
         resolve(result.rows)
 
-  new Promise(p).finally(done)
+  new Promise(p)
 
 p = (resolve, reject)->
   pg.connect conStr, (err, client, done)->
