@@ -1,0 +1,18 @@
+<dom-module id="feed-list">
+    <style>
+        :host {
+            display: block;
+            padding: 10px;
+        }
+        :host > div {
+            margin: 4px 0;
+        }
+    </style>
+    <template>
+        <template is="dom-repeat" items="{{feeds}}">
+            <div>{{item.title}}</div>
+        </template>
+    </template>
+
+    <script src="./feed-list.js"></script>
+</dom-module>
