@@ -1,3 +1,4 @@
+path = require 'path'
 require 'coffee-script/register'
 auth = require './auth'
 express = require 'express'
@@ -6,6 +7,10 @@ db = require './db'
 bower = require './bower'
 apiRouter = require './api'
 
+app.use (req, res, next)->
+  if /^\/feeds/.test req.originalUrl
+    req.url = '/'
+  next()
 app.use express.static('../public')
 app.use bower, auth.basic
 

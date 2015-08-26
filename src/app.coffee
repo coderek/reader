@@ -9,4 +9,3 @@ $ ->
 
   Reader.menuAction = -> console.log 'menu action'
   Reader.moreAction = -> console.log 'more action'
-

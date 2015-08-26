@@ -10,7 +10,7 @@
     </style>
     <template>
         <template is="dom-repeat" items="{{feeds}}">
-            <div>{{item.title}}</div>
+        <div><a is="pushstate-anchor" href$="{{feed_url(item)}}">{{item.title}}</a></div>
         </template>
     </template>
 
