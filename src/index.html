@@ -31,6 +31,7 @@
                 <paper-toolbar></paper-toolbar>
                 <app-router mode="pushstate" trailingSlash="ignore">
                     <app-route path="/feeds/:feed_id" element="feed-item"></app-route>
+                    <app-route path="/feeds/:feed_id/entries/:entry_id" element="entry-item"></app-route>
                 </app-router>
             </paper-header-panel>
         </paper-drawer-panel>

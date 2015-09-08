@@ -15,6 +15,14 @@ module.exports = (db)->
       .catch(errorHandler res)
 
   router.get '/feeds/:fid/entries', (req, res)->
-    db.getEntries(req.params.fid).then(res.json.bind res).catch(errorHandler res)
+    db.getEntries(req.params.fid)
+      .then(res.json.bind res)
+      .catch(errorHandler res)
+
+  router.get '/feeds/:fid/entries/:eid', (req, res)->
+    {fid, eid} = req.params
+    db.getEntry(eid)
+      .then(res.json.bind res)
+      .catch(errorHandler res)
 
   router
